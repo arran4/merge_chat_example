@@ -1,0 +1,23 @@
+icon: assets/logo.png
+summary: An application for managing bookmarks
+group: Application/Emulator
+vendor: Arran Ubels
+packager: Arran Ubels
+packagerEmail: arran4@gmail.com
+license: GPLv3
+url: https://github.com/arran4/merge_chat_example
+
+display_name: Merge Chat Example
+
+keywords:
+  - Chat
+  - Proof Of Concept
+
+generic_name: Merge Chat Example
+
+metainfo: linux/packaging/mergeChatExample.appdata.xml
+
+categories:
+  - Network
+
+startup_notify: true

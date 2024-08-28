@@ -1,0 +1,174 @@
+output: dist/
+releases:
+  - name: test
+    jobs:
+      - name: web-direct
+        package:
+          platform: web
+          target: zip
+        publish:
+          target: github
+          args:
+            repo-owner: arran4
+            repo-name: merge_chat_example
+  - name: onlinux
+    jobs:
+# Broken pending: https://github.com/leanflutter/flutter_distributor/pull/221
+#      - name: linux-appimage
+#        package:
+#          platform: linux
+#          target: appimage
+#        publish:
+#          target: github
+#          args:
+#            repo-owner: arran4
+#            repo-name: merge_chat_example
+      - name: linux-deb
+        package:
+          platform: linux
+          target: deb
+        publish:
+          target: github
+          args:
+            repo-owner: arran4
+            repo-name: merge_chat_example
+      - name: linux-rpm
+        package:
+          platform: linux
+          target: rpm
+        publish:
+          target: github
+          args:
+            repo-owner: arran4
+            repo-name: merge_chat_example
+      - name: linux-pacman
+        package:
+          platform: linux
+          target: pacman
+        publish:
+          target: github
+          args:
+            repo-owner: arran4
+            repo-name: merge_chat_example
+      - name: linux-zip
+        package:
+          platform: linux
+          target: zip
+        publish:
+          target: github
+          args:
+            repo-owner: arran4
+            repo-name: merge_chat_example
+      - name: android-aab-github
+        package:
+          platform: android
+          target: aab
+          build_args:
+            target-platform: android-arm,android-arm64
+        publish:
+          target: github
+          args:
+            repo-owner: arran4
+            repo-name: merge_chat_example
+      - name: android-aab-playstore
+        package:
+          platform: android
+          target: aab
+          build_args:
+            target-platform: android-arm,android-arm64
+        publish:
+          target: playstore
+          args:
+            package-name: com.arran4.merge_chat_example
+            track: production
+      - name: android-apk
+        package:
+          platform: android
+          target: apk
+          build_args:
+            target-platform: android-arm,android-arm64
+        publish:
+          target: github
+          args:
+            repo-owner: arran4
+            repo-name: merge_chat_example
+      - name: web-direct
+        package:
+          platform: web
+          target: zip
+        publish:
+          target: github
+          args:
+            repo-owner: arran4
+            repo-name: merge_chat_example
+  - name: onwindows
+    jobs:
+      - name: windows-exe
+        package:
+          platform: windows
+          target: exe
+        publish:
+          target: github
+          args:
+            repo-owner: arran4
+            repo-name: merge_chat_example
+      - name: windows-msix
+        package:
+          platform: windows
+          target: msix
+        publish:
+          target: github
+          args:
+            repo-owner: arran4
+            repo-name: merge_chat_example
+      - name: windows-zip
+        package:
+          platform: windows
+          target: zip
+        publish:
+          target: github
+          args:
+            repo-owner: arran4
+            repo-name: merge_chat_example
+  - name: onmac
+    jobs:
+# Disabled for packaging reasons atm.
+#      - name: ios-ipa
+#        package:
+#          platform: ios
+#          target: ipa
+#          build_args:
+#            export-method: ad-hoc
+#        publish:
+#          target: github
+#          args:
+#            repo-owner: arran4
+#            repo-name: merge_chat_example
+      - name: macos-dmg
+        package:
+          platform: macos
+          target: dmg
+        publish:
+          target: github
+          args:
+            repo-owner: arran4
+            repo-name: merge_chat_example
+# Disabled for packaging reasons atm.
+#      - name: macos-pkg
+#        package:
+#          platform: macos
+#          target: pkg
+#        publish:
+#          target: github
+#          args:
+#            repo-owner: arran4
+#            repo-name: merge_chat_example
+      - name: macos-zip
+        package:
+          platform: macos
+          target: zip
+        publish:
+          target: github
+          args:
+            repo-owner: arran4
+            repo-name: merge_chat_example

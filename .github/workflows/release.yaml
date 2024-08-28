@@ -78,13 +78,6 @@ jobs:
           yq -i ".version |= \"${SEMANTIC_VERSION}+\"" pubspec.yaml
           yq -i '.version += strenv(GITHUB_RUN_NUMBER)' pubspec.yaml
 
-      - name: Secrets
-        run: |
-          echo "${SECRET_FILE}" | base64 -d | tar xvj 
-          echo "PLAYSTORE_CREDENTIALS=${PWD}/mergeChatExample-e713764ecb3d.json" >> $GITHUB_ENV
-        env:
-          SECRET_FILE: "${{ secrets.SECRET_FILE }}"
-
       - name: Build and Release On Linux
         run: |
           flutter pub get
@@ -92,12 +85,6 @@ jobs:
           flutter_distributor release --name onlinux
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-
-      - name: Unsecret
-        run: |
-          echo "${SECRET_FILE}" | base64 -d | tar -j --list | xargs rm -f
-        env:
-          SECRET_FILE: "${{ secrets.SECRET_FILE }}"
 
   macos:
     runs-on: macos-latest

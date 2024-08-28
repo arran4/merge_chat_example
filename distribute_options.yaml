@@ -70,17 +70,17 @@ releases:
           args:
             repo-owner: arran4
             repo-name: merge_chat_example
-      - name: android-aab-playstore
-        package:
-          platform: android
-          target: aab
-          build_args:
-            target-platform: android-arm,android-arm64
-        publish:
-          target: playstore
-          args:
-            package-name: com.arran4.merge_chat_example
-            track: production
+#      - name: android-aab-playstore
+#        package:
+#          platform: android
+#          target: aab
+#          build_args:
+#            target-platform: android-arm,android-arm64
+#        publish:
+#          target: playstore
+#          args:
+#            package-name: com.arran4.merge_chat_example
+#            track: production
       - name: android-apk
         package:
           platform: android

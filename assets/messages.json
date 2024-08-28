@@ -1,0 +1,11 @@
+[
+  {
+    "type": "text",
+    "author": {
+      "firstName": "Other person",
+      "id": "2"
+    },
+    "id": "1",
+    "text": "Hi"
+  }
+]

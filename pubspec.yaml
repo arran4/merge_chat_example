@@ -1,0 +1,33 @@
+name: merge_chat_example
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  file_picker: any
+  flutter_chat_types: any
+  flutter_chat_ui: any
+  http: any
+  image_picker: any
+  intl: any
+  mime: any
+  open_filex: any
+  path_provider: any
+  uuid: any
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+   - assets/messages.json
